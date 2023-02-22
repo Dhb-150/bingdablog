@@ -3,6 +3,12 @@ import App from './App.vue'
 import router from './router'
 // Vuetify
 import vuetify from './plugins/vuetify'
+import global from './js/globaldate'
 
+const app = createApp(App)
 
-createApp(App).use(router).use(vuetify).mount('#app')
+app
+.use(router)
+.use(vuetify)
+.config.globalProperties.global = global
+app.mount('#app')
